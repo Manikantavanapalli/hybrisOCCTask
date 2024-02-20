@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:component-scan base-package="yoccpackage.controllers"/>
+    
+    <bean id="currencyFieldMapper" parent="fieldMapper">
+		<property name="sourceClass" value="com.hybris.testing.facades.currency.data.CurrencyDataWsDTO"/>
+		<property name="destClass" value="com.hybris.testing.facades.currency.data.CurrencyRateData"/>
+		<property name="fieldMapping">
+       		 <map>
+           		 <entry key="currencyConversonRate" value="conversionRate"/> 
+       		 </map>
+    	</property>
+	</bean>
+
+<bean id="currencySetLevelMap" parent="fieldSetLevelMapping" >
+        <property name="dtoClass"
+                  value="com.hybris.testing.facades.currency.data.CurrencyDataWsDTO"/>
+        <property name="levelMapping">
+            <map>
+                <entry key="BASIC" value="conversionType,currencyConversonRate"/>
+                <entry key="DEFAULT" value="fromCurrency,toCurrency,conversionDate "/>
+                <entry key="FULL" value="fromCurrency,toCurrency,conversionDate,conversionType,currencyConversonRate"/>
+            </map>
+        </property>
+</bean>
+ 
+</beans>

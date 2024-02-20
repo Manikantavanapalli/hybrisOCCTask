@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+ Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
+-->
+<!--
+	ATTENTION: This is just an example file. You have to edit it according to your needs.
+-->
+
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="beans.xsd">
+
+	<!--
+		Example Data POJO
+	
+	<bean class="yemptypackage.data.MyPojo">
+		<property name="id" type="String"/>
+		<property name="flag" type="boolean"/>
+	</bean>
+	-->
+<bean class="com.hybris.testing.dto.doc.HybrisEcommerceDocWSDTO">
+        <property name="code" type="String"/>
+        <property name="docName" type="String"/>
+        <property name="keywords" type="String"/>
+        <property name="url" type="String"/>
+        <property name="docType" type="String"/>
+        <property name="language" type="String"/>
+        <property name="visibility" type="Boolean"/>
+</bean>
+<bean class="com.hybris.testing.dto.doc.HybrisEcommerceDocDataListWSDTO">
+<property name="hybrisEcommerceDoc" type="java.util.List &lt;com.hybris.testing.dto.doc.HybrisEcommerceDocWSDTO>"/>
+</bean>
+
+	<bean class="com.hybris.testing.facades.mysppliers.dto.MySuppliersStoreWSDTO">
+		<property name="manuFacturerCode" type="String"/>
+		<property name="manufacturerName" type="String"/>
+		<property name="url" type="String"/>
+		<property name="active" type="Boolean"/>
+		<property name="seo" type="String"/>
+	</bean>
+	
+	<bean class="com.hybris.testing.facades.mysppliers.dto.MySuppliersStoreDataListWSDTO">
+		<property name="storesupplierslistdata" type="java.util.List &lt;com.hybris.testing.facades.mysppliers.dto.MySuppliersStoreWSDTO>"/>
+	</bean>	
+	
+	<bean class="com.hybris.testing.facades.currency.data.CurrencyDataWsDTO">
+        <property name="fromCurrency"   type="String"/>
+        <property name="toCurrency"     type="String"/>
+        <property name="conversionDate" type="String"/>
+        <property name="conversionType" type="String"/>
+        <property name="currencyConversonRate" type="Double"/>
+    </bean>
+    <bean class="com.hybris.testing.facades.doc.data.CurrencyDataListWsDTO">
+        <property name="currencyRateHybris" type="java.util.List &lt;com.hybris.testing.facades.currency.data.CurrencyDataWsDTO>"/>
+    </bean>
+	
+
+</beans>
