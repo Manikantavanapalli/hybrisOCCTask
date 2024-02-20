@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+ Copyright (c) 2019 SAP SE or an SAP affiliate company. All rights reserved.
+-->
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="beans.xsd">
+
+	<bean class="de.hybris.platform.commercefacades.product.data.ProductData">
+		<property name="genders" type="java.util.List&lt;com.testing.facades.product.data.GenderData>"/>
+	</bean>
+
+	<bean class="com.testing.facades.product.data.GenderData">
+		<property name="code" type="String"/>
+		<property name="name" type="String"/>
+	</bean>
+	
+	<bean class="com.hybris.testing.facades.store.data.YTSDocumentStoreData">
+		<property name="code" type="String"/>
+		<property name="docName" type="String"/>
+		<property name="keywords" type="String"/>
+		<property name="url" type="String"/>
+		<property name="docType " type="String"/>
+		<property name="language" type="String"/>
+		<property name="visibility" type="Boolean"/>
+	</bean>
+	
+	<bean class="com.hybris.testing.facades.store.data.YTSDocumentStoreDataList">
+		<property name="documents" type="java.util.List &lt;com.hybris.testing.facades.store.data.YTSDocumentStoreData>"/>
+	</bean>
+	
+	<bean class="com.hybris.testing.facades.mysppliers.MySuppliersStoreData">
+		<property name="manuFacturerCode" type="String"/>
+		<property name="manufacturerName" type="String"/>
+		<property name="url" type="String"/>
+		<property name="active" type="Boolean"/>
+		<property name="seo" type="String"/>
+		 
+	</bean>
+	
+	<bean class="com.hybris.testing.facades.mysppliers.MySuppliersStoreDataList">
+		<property name="storesupplierslistdata" type="java.util.List &lt;com.hybris.testing.facades.mysppliers.MySuppliersStoreData>"/>
+	</bean>
+	
+	<!-- Third Requirement -->
+	<bean
+	class="com.hybris.testing.facades.currency.data.CurrencyRateData">
+	<property name="fromCurrency" type="String" />
+	<property name="toCurrency" type="String" />
+	<property name="conversionDate" type="String" />
+	<property name="conversionType" type="String" />
+	<property name="conversionRate" type="Double" />
+</bean>
+	<bean
+		class="com.hybris.testing.facades.doc.data.HybrisCurrencyDataList">
+		<property name="currencyRateHybris"
+			type="java.util.List &lt;com.hybris.testing.facades.currency.data.CurrencyRateData>" />
+	</bean>
+	
+</beans>
